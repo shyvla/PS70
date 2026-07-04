@@ -1,106 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNC · PS70</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="../style.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-sm navbar-" style="background-color: #dcdcdc; color: #000000;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="d-flex w-100">
-      <h4 class="nav-name me-auto"> Shyla Nguyen</h4>
-      <h2 class="nav-title position-absolute start-50 translate-middle-x">PS70 Fall 2025</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
-
+</head>
 <body>
-<xmp style="display:none;">
-<div class="textcontainer">
-<p class="margin">   </p>
-
-<h3>Week 8: CNC Milling</h3>
-
-<h4>Assignment: Make Something With CNC</h4>
-
-<p> For this week's assignment, I wanted to make something I could use. I landed on making a jewelry tray.
-  My inspiration for this week was an organic design. I went with a koi pond design.
-</p>
-<p> To create this project, I first modeled my design on Fusion.</p>
-<iframe 
-  src="https://a360.co/3WvybT2" 
-  width="800" 
-  height="600" 
-  frameborder="0" 
-  allowfullscreen>
-</iframe>
-<p> To do this, I drew the the shape of the pond, and then imported vector images of the koi fish onto my sketch. After, I 
-  drew the other elements of the pond using Fusion's sketch tools. 
-</p>
-<p> Next, I loaded my design into the CNC software and prepared it to be cut. After doing so, I noticed some issues with
-  extra lines on vector image fish, so, I went back and cleaned up my Fusion sketch. Then, I was ready to start CNCing.
-</p>
-<img src="koi_pond_wooden.jpg" alt="koi pond unsanded" style="width:600px" />
-
-<p> After sanding: </p>
-<img src="pond-thumbnail.jpg" alt="koi pond" style="width:600px" />
-<p class = "margin"></p>
-
-<p> Reflections: </p>
-<p> Overall, I was happy with how the pond came out. I liked how the wood layering allowed for the water to be a different color 
-  then the other elements in the design. In future iterations, I would probably scale the internal elements in the pond up a 
-  little to allow them to cut a little cleaner (especially the water ripples, which I ended up sanding off) and smooth some of 
-  the edges on the fin/tail design. I would also like to add more elements into the pond. </p>
-<p class = "margin"></p>
-
-<h4>Molding and Casting</h4>
-<p> For the molding and casting portion of this week, I wanted to mold and cast someone's head in plaster (inspired by the busts in Berg).
-  To this, I would first need a scan of someone's head. Luckily, I knew just the right person to ask: Jack (who did not need convincing).
-  As warned during 3D printing week, we found that it was difficult to pick up hair on the LIDAR scanner. 
-</p>
-<p> After having already scanned my objects from week 5, I didn't think it was the texture that was the problem. I thought it could be
-  the way that hair reflects light that caused the problem. So, we needed a way to matify Jack's hair...
-</p>
-<h5>The cornstarching</h5>
-<img src="cornstarched.jpg" alt="cornstarched" style="width:450px" />
-
-<p> Now that Jack's hair was matified, we could scan his whole head! The scan file ended up being super huge and I had to post-process it on
-  a PC (the makerspace computer could not handle it). I ended up using three different softwares to try to post-process the huge file (RevoScan,
-  Blendr, and one other I will link if I can find it again.</p>
-<img src="jack_stl.png" alt="plaster mold" style="width:600px" />
-
-<p> After extensive post-processing, the scan was ready to be printed. The print came out pretty well, except I accidentally decapitated the 
-  bottom of the print while removing it from the mold (shown in the next step). </p>
-<img src="jack_print.jpg" alt="plaster mold" style="width:450px" />
-
-<p> I created the mold with Alja-Safe and casted it using plaster. I ended up doing a couple iterations to try to improve the quality of the cast.
-  Some notes on molding and casting: tap things out to remove air bubbles and be careful when removing your object from the Alja-Safe mold 
-  (attach something SECURELY to it to make it easier to remove). </p>
-<img src="mold.jpg" alt="plaster mold" style="width:450px" />
-<p class = "margin"></p>
-
-<img src="the_jacks.jpg" alt="plaster mold" style="width:450px" />
-<p class = "margin"></p>
-
-<h4>Reflections:</h4>
-
-<p> This was fun, but I would probably not do it again. Creating a scan of Jack's head took many scans (and rescans) to assemble 
-  a model. It also took a lot of time (and compute) to post-process the scan to a usable size. From there, the molding and casting 
-  wasn't too bad, but I did find it hard to capture as much detail as I would like. Part of this is probably caused by the damage to
-  the mold caused by removing the object. In the future, I think it would be worth looking into different molding methods (maybe silicon?)
-  and possibly printing a slightly larger model to create the mold from.
-</p>
-
-
-</div>
-</xmp>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-dot"></span>
+      <span class="brand-name">PS70</span>
+      <span class="brand-sub">Digital Fabrication</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="../index.html">Work</a>
+      <a class="nav-link" href="../about.html">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="article-wrap">
+      <a class="back-link" href="../index.html"><span class="arrow">←</span> All projects</a>
+      <div class="week-eyebrow">WEEK 08 · Large-Format Cutting</div>
+      <h1 class="week-title">CNC</h1>
+      <img class="hero-img" src="pond-thumbnail.jpg" alt="CNC">
+      <article class="article">
+        <h2 class="a-h">Assignment: Make something with CNC</h2>
+        <p class="a-p">For this week's assignment, I wanted to make something I could use. I landed on making a jewelry tray. My inspiration this week was an organic design — I went with a koi pond.</p>
+        <p class="a-p">To create this project, I first modeled my design in Fusion.</p>
+        <iframe class="a-iframe" src="https://a360.co/3WvybT2" allowfullscreen></iframe>
+        <p class="a-p">To do this, I drew the shape of the pond, then imported vector images of the koi fish onto my sketch. After, I drew the other elements of the pond using Fusion's sketch tools.</p>
+        <p class="a-p">Next, I loaded my design into the CNC software and prepared it to be cut. I noticed some issues with extra lines on the vector-image fish, so I went back and cleaned up my Fusion sketch. Then I was ready to start CNCing.</p>
+        <figure class="a-fig">
+          <img src="koi_pond_wooden.jpg" alt="" loading="lazy">
+          <figcaption class="a-cap">After cutting, before sanding</figcaption>
+        </figure>
+        <p class="a-p">After sanding:</p>
+        <figure class="a-fig">
+          <img src="pond-thumbnail.jpg" alt="" loading="lazy">
+        </figure>
+        <h2 class="a-h">Reflections</h2>
+        <p class="a-p">Overall, I was happy with how the pond came out. I liked how the wood layering allowed the water to be a different color than the other elements. In future iterations, I'd scale the internal elements up a little so they cut cleaner (especially the water ripples, which I ended up sanding off) and smooth some of the edges on the fin/tail design. I'd also like to add more elements into the pond.</p>
+        <h2 class="a-h">Molding and Casting</h2>
+        <p class="a-p">For the molding and casting portion, I wanted to mold and cast someone's head in plaster (inspired by the busts in Berg). To do this, I'd first need a scan of someone's head. Luckily, I knew just the right person to ask: Jack (who did not need convincing). As warned during 3D printing week, we found it difficult to pick up hair on the LIDAR scanner.</p>
+        <p class="a-p">Having already scanned my objects from week 5, I didn't think it was the texture that was the problem. I thought it could be the way hair reflects light. So, we needed a way to matify Jack's hair…</p>
+        <h2 class="a-h">The cornstarching</h2>
+        <figure class="a-fig">
+          <img src="cornstarched.jpg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">Now that Jack's hair was matified, we could scan his whole head! The scan file ended up being huge and I had to post-process it on a PC (the makerspace computer could not handle it). I ended up using three different softwares to post-process the file (RevoScan, Blender, and one other I'll link if I find it again).</p>
+        <figure class="a-fig">
+          <img src="jack_stl.png" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">After extensive post-processing, the scan was ready to print. The print came out pretty well, except I accidentally decapitated the bottom of the print while removing it from the mold (shown next).</p>
+        <figure class="a-fig">
+          <img src="jack_print.jpg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">I created the mold with Alja-Safe and cast it using plaster, doing a couple of iterations to improve the quality. Some notes on molding and casting: tap things out to remove air bubbles, and be careful removing your object from the Alja-Safe mold (attach something SECURELY to it to make removal easier).</p>
+        <figure class="a-fig">
+          <img src="mold.jpg" alt="" loading="lazy">
+        </figure>
+        <figure class="a-fig">
+          <img src="the_jacks.jpg" alt="" loading="lazy">
+        </figure>
+        <h2 class="a-h">Reflections</h2>
+        <p class="a-p">This was fun, but I'd probably not do it again. Creating a scan of Jack's head took many scans (and rescans) to assemble a model, and a lot of time (and compute) to post-process to a usable size. The molding and casting wasn't too bad, but I found it hard to capture as much detail as I'd like — partly due to the damage to the mold from removing the object. In the future, I'd look into different molding methods (maybe silicone?) and possibly print a slightly larger model to make the mold from.</p>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-left">PS70 · INTRODUCTION TO DIGITAL FABRICATION</span>
+    <span class="footer-right">Shyla Nguyen · Fall 2025</span>
+  </footer>
 </body>
-
-<script src="../strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>
