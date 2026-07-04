@@ -1,97 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduction · PS70</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="../style.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-sm navbar-" style="background-color: #dcdcdc; color: #000000;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="d-flex w-100">
-      <h4 class="nav-name me-auto"> Shyla Nguyen</h4>
-      <h2 class="nav-title position-absolute start-50 translate-middle-x">PS70 Fall 2025</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
-
+</head>
 <body>
-<xmp style="display:none;">
-<div class="textcontainer">
-<br></br>
-
-<h3>Week 1: Final Project Proposal</h3>
-<p class = "margin"></p>
-
-<h4>Moving Workbench</h4>
-<p class = "margin"></p>
-
-<p>
-  This summer, I worked in manufacturing. Often times, parts and tools would have to be transported to different parts of the factory. Some equipment
-  was heavy or inconvenient to carry, especially if you have your hands full. Other times, it could be helpful to extend your workspace or to have a mobile 
-  surface nearby while working (i.e. for placing tools and other equipment).
-</p>
-<p>In order to assist in these scenarios, I thought it would be fun to build a moving workbench that can follow a specified user around. The idea is 
-  esssentially a moving table on wheels. 
-</p>
-
-<h5>General idea:</h5>
-
-<img src="table-sketches.jpeg" alt="hand sketches of moving workbenches" style="width:700px" />
-
-<p class = "margin"></p>
-
-<h5>Workbench features:</h5>
-<ul>
-  <li>Wooden top & legs</li>
-  <li>Motor hidden underneath bottom surface for mobility</li>
-  <li>4 wheels attached to bottom</li>
-  <li>Microcontroller used for detecting user</li>
-</ul>
-
-<h5> Ideas for User Detection: </h5>
-<p> I have no idea how to make the workbench detect and follow the user yet. At the moment, I would think to use a camera and computer vision, some type of sensor,
-  or some type of remote control system.
-</p>
-
-<img src="tables-camera.png" style="width:700px" />
-
-<p class = "margin"></p>
-
-<h5> I may also consider: </h5>
-<ul>
-  <li>Creating attachments to extend the functionality of the table (ex. tool holds)</li>
-  <li>Giving the table arms (could probably be useful or just)</li>
-</ul>
-<p> I'm excited to see how my design and implementation ideas evolve as I learn more! </p>
-
-<h5>Final Project Week 5 Updates:</h5>
-<p class = "margin"></p>
-<h5>BOM:</h5>
-<ul>
-  <li>1/2" plywood</li>
-  <li>4 wheels</li>
-  <li>High torque motor</li>
-  <li>Breadboard</li>
-  <li>ESP32</li>
-  <li>L928N motor controller</li>
-  <li>Batteries</li>
-</ul>
-<h5>Timeline:</h5>
-<p> Week 6 (Outputs): Prototype a moving "table". Just needs to move and be controlled with a microcontroller. </p>
-<p> Week 7 (MVP Week): Add a remote control feature. Figure out how to use input-output system to do this. Present a MVP. </p>
-<p> Week 8 (CNC Week): Cut the table out of wood. Make it look cool. </p>
-<p> Week 9 (Networking): Prototype any additional features for the table. </p>
-<p> Week 10: Refine project. </p>
-
-</div>
-</xmp>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-dot"></span>
+      <span class="brand-name">PS70</span>
+      <span class="brand-sub">Digital Fabrication</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="../index.html">Work</a>
+      <a class="nav-link" href="../about.html">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="article-wrap">
+      <a class="back-link" href="../index.html"><span class="arrow">←</span> All projects</a>
+      <div class="week-eyebrow">WEEK 01 · Getting Started</div>
+      <h1 class="week-title">Introduction</h1>
+      <img class="hero-img" src="table-sketches-thumbnail.jpg" alt="Introduction">
+      <article class="article">
+        <h2 class="a-h">Final Project Proposal: Moving Workbench</h2>
+        <p class="a-p">This summer, I worked in manufacturing. Often times, parts and tools would have to be transported to different parts of the factory. Some equipment was heavy or inconvenient to carry, especially if you have your hands full. Other times, it could be helpful to extend your workspace or to have a mobile surface nearby while working (i.e. for placing tools and other equipment).</p>
+        <p class="a-p">In order to assist in these scenarios, I thought it would be fun to build a moving workbench that can follow a specified user around. The idea is essentially a moving table on wheels.</p>
+        <h2 class="a-h">General idea</h2>
+        <figure class="a-fig">
+          <img src="table-sketches.jpeg" alt="" loading="lazy">
+          <figcaption class="a-cap">Hand sketches of moving workbenches</figcaption>
+        </figure>
+        <h2 class="a-h">Workbench features</h2>
+        <ul class="a-ul">
+          <li>Wooden top &amp; legs</li>
+          <li>Motor hidden underneath bottom surface for mobility</li>
+          <li>4 wheels attached to bottom</li>
+          <li>Microcontroller used for detecting user</li>
+        </ul>
+        <h2 class="a-h">Ideas for user detection</h2>
+        <p class="a-p">I have no idea how to make the workbench detect and follow the user yet. At the moment, I would think to use a camera and computer vision, some type of sensor, or some type of remote control system.</p>
+        <figure class="a-fig">
+          <img src="tables-camera.png" alt="" loading="lazy">
+        </figure>
+        <h2 class="a-h">I may also consider</h2>
+        <ul class="a-ul">
+          <li>Creating attachments to extend the functionality of the table (ex. tool holders)</li>
+          <li>Giving the table arms (could probably be useful)</li>
+        </ul>
+        <p class="a-p">I'm excited to see how my design and implementation ideas evolve as I learn more!</p>
+        <h2 class="a-h">Final Project — Week 5 Updates</h2>
+        <p class="a-p">Bill of materials:</p>
+        <ul class="a-ul">
+          <li>1/2" plywood</li>
+          <li>4 wheels</li>
+          <li>High-torque motor</li>
+          <li>Breadboard</li>
+          <li>ESP32</li>
+          <li>L298N motor controller</li>
+          <li>Batteries</li>
+        </ul>
+        <p class="a-p">Timeline:</p>
+        <ul class="a-ul">
+          <li>Week 6 (Outputs): Prototype a moving "table" — just needs to move and be controlled with a microcontroller.</li>
+          <li>Week 7 (MVP Week): Add a remote control feature. Figure out how to use the input–output system to do this. Present an MVP.</li>
+          <li>Week 8 (CNC Week): Cut the table out of wood. Make it look cool.</li>
+          <li>Week 9 (Networking): Prototype any additional features for the table.</li>
+          <li>Week 10: Refine project.</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-left">PS70 · INTRODUCTION TO DIGITAL FABRICATION</span>
+    <span class="footer-right">Shyla Nguyen · Fall 2025</span>
+  </footer>
 </body>
-
-<script src="../strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>

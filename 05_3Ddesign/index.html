@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-</head>
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Design · PS70</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="../style.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-sm navbar-" style="background-color: #dcdcdc; color: #000000;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="d-flex w-100">
-      <h4 class="nav-name me-auto"> Shyla Nguyen</h4>
-      <h2 class="nav-title position-absolute start-50 translate-middle-x">PS70 Fall 2025</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
-
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
 <body>
-<xmp style="display:none;">
-<div class="textcontainer">
-<p class="margin">   </p>
-
-<h3>Week 5: 3D Design & Printing</h3>
-
-<h4>Assignment: Model and 3D print something</h4>
-
-<p>This week, were assigned to model and 3D print something. My original idea was to print out little jumping frogs, like these: </p>
-<img src="plastic_frogs.jpeg" style="width:250px" />
-
-<p>After modeling my design on Fusion, I printed my first iteration. Ultimately, the legs were too thin and would break off while
-  I tried to remove the support material. Additionally, the tab used to push down would not bend as needed.
-</p>
-<p>I ended up going through a few iterations before I switched ideas. After these iterations, I realized PLA is probably not
-  the best material for this design. If I really had to try to make it work though, I would probably scale the design up 
-  more and attempt to design a better hinge that can bend and (hopefully) generate the kinetic energy needed to make the frog
-  jump.
- </p>
-  <model-viewer src="frog.glb"
-            alt="Fusion 360 model"
-            camera-controls
-            auto-rotate
-            style="width: 600px; height: 400px;">
-  </model-viewer>
-  <a download href='./frog.stl'> Frog STL </a>
-  <p class="margin"> </p>
-
-  <img src="frog_iterations.jpg" style="width:250px" />
-
-  <p> I went through a couple of iterations varying the thickness of the legs and body of the frog.</p>
-
-<p>Impulsive pivot: </p>
-<p>Eventually, I decided to pivot to attempt to make an articulate design. I was interested in designing something that had 
-  some movment capability. I landed on making a chain-link PIP dratini. 
-</p>
-<img src="dratini_v1.jpg" style="width:250px" />
-
-<p> This model turned out to be more of a proof-of-concept. The CADing can definitely be improved on and some
-  paint would certainly help! I would like to look into better using t-splines as well to get more organic
-  shapes for the design. The model does articulate though!
-</p>
-
-<a download href='./dratini.stl'> Dratini STL </a>
-<p class="margin"> </p>
-
-<h4>3D Scan</h4>
-<model-viewer src="shyla_cat_scan.glb" 
-              camera-controls 
-              auto-rotate 
-              style="width: 500px; height: 400px;">
-</model-viewer>
-<a download href='./shyla_cat_scan.stl'> Cat Figure STL </a>
-<model-viewer src="shyla_dinosaur_scan.glb" 
-              camera-controls 
-              auto-rotate 
-              style="width: 500px; height: 400px;">
-</model-viewer>
-<a download href='./shyla_dinosaur_scan.stl'> Dinosaur Figure STL </a>
-
-<p> Original Figures: </p>
-<img src="cat_dino.jpg" style="width:250px" />
-
-
-</div>
-</xmp>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-dot"></span>
+      <span class="brand-name">PS70</span>
+      <span class="brand-sub">Digital Fabrication</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="../index.html">Work</a>
+      <a class="nav-link" href="../about.html">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="article-wrap">
+      <a class="back-link" href="../index.html"><span class="arrow">←</span> All projects</a>
+      <div class="week-eyebrow">WEEK 05 · Modeling &amp; Printing</div>
+      <h1 class="week-title">3D Design</h1>
+      <img class="hero-img" src="cat-scan-thumbnail.jpg" alt="3D Design">
+      <article class="article">
+        <h2 class="a-h">Assignment: Model and 3D print something</h2>
+        <p class="a-p">This week, we were assigned to model and 3D print something. My original idea was to print out little jumping frogs, like these:</p>
+        <figure class="a-fig">
+          <img src="plastic_frogs.jpeg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">After modeling my design on Fusion, I printed my first iteration. Ultimately, the legs were too thin and would break off while I tried to remove the support material. Additionally, the tab used to push down would not bend as needed.</p>
+        <p class="a-p">I ended up going through a few iterations before I switched ideas. After these iterations, I realized PLA is probably not the best material for this design. If I really had to make it work, I would scale the design up more and design a better hinge that can bend and (hopefully) generate the kinetic energy needed to make the frog jump.</p>
+        <div class="a-model">
+          <model-viewer src="frog.glb" camera-controls auto-rotate></model-viewer>
+          <a class="a-dl" href="frog.stl" download style="margin-top:12px">↓ Frog STL</a>
+        </div>
+        <figure class="a-fig">
+          <img src="frog_iterations.jpg" alt="" loading="lazy">
+          <figcaption class="a-cap">A couple of iterations varying the thickness of the legs and body of the frog</figcaption>
+        </figure>
+        <h2 class="a-h">Impulsive pivot</h2>
+        <p class="a-p">Eventually, I decided to pivot to an articulated design. I was interested in designing something with some movement capability. I landed on making a chain-link, print-in-place dratini.</p>
+        <figure class="a-fig">
+          <img src="dratini_v1.jpg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">This model turned out to be more of a proof-of-concept. The CADing can definitely be improved and some paint would certainly help! I'd like to look into using t-splines to get more organic shapes for the design. The model does articulate though!</p>
+        <a class="a-dl" href="dratini.stl" download="dratini.stl">↓ Dratini (.stl)</a>
+        <h2 class="a-h">3D Scan</h2>
+        <div class="a-model">
+          <model-viewer src="shyla_cat_scan.glb" camera-controls auto-rotate></model-viewer>
+          <a class="a-dl" href="shyla_cat_scan.stl" download style="margin-top:12px">↓ Cat figure STL</a>
+        </div>
+        <div class="a-model">
+          <model-viewer src="shyla_dinosaur_scan.glb" camera-controls auto-rotate></model-viewer>
+          <a class="a-dl" href="shyla_dinosaur_scan.stl" download style="margin-top:12px">↓ Dinosaur figure STL</a>
+        </div>
+        <p class="a-p">Original figures:</p>
+        <figure class="a-fig">
+          <img src="cat_dino.jpg" alt="" loading="lazy">
+        </figure>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-left">PS70 · INTRODUCTION TO DIGITAL FABRICATION</span>
+    <span class="footer-right">Shyla Nguyen · Fall 2025</span>
+  </footer>
 </body>
-
-<script src="../strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>

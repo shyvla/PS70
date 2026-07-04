@@ -1,181 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inputs · PS70</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="../style.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-sm navbar-" style="background-color: #dcdcdc; color: #000000;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="d-flex w-100">
-      <h4 class="nav-name me-auto"> Shyla Nguyen</h4>
-      <h2 class="nav-title position-absolute start-50 translate-middle-x">PS70 Fall 2025</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
-
+</head>
 <body>
-<xmp style="display:none;">
-<div class="textcontainer">
-<p class="margin">   </p>
-
-<h3>Week 6: Electronic Inputs</h3>
-
-<h4>Assignment 1: Capactive Sensor<h4>
-<p> During class, my team was assigned to make a distance sensor. To make our capacitive sensor, we put capacitive tape on
-  two pieces of cardboard and made a stand for each one.  We then attached our sensors to a breadboard using alligator clips. 
-  I've recreated our sensors below:
-</p>
-<img src="capacitive_sensor.jpg" width="400">
-
-<p> After, I recorded the values read by our sensors and plotted them on a graph and found a line of best fit. Note: the x-values
-  are in cm and the y-values below are scaled down by 1,000 for the purposes of graphing. After 14 cm, I noticed the read values 
-  from the sensors started to plateau around 14,000. This could just be the result of our capacitive sesnsors being too far apart
-  to detect anything from one another.
-</p>
-<img src="desmos_graph.png" width="600">
-<p class="margin">   </p>
-
-<h4>Assignment 2: Another Sensor</h4>
-<p> I've made a quite a few musically-inclined friends recently and they all have perfect pitch. Inspired them (and to see if they
-  really have perfect pitch), I wanted to use a microphone for my sensor. My idea was to use the microphone to record the frequency 
-  of sound input (when the user clicks a button) and then transcribe that frequency into its corresponding music note. The pizeo buzzer
-  will then play that sound frequency back to the user.
-</p>
-<h5>Materials:</h5>
-<ul>
-  <li>ESP32 XIAO</li>
-  <li>Adafruit SPW 2430 MEMS Microphone</li>
-  <li>PT-2726PQ Piezo Buzzer</li>
-  <li>Button</li>
-  <li>Breadboard</li>
-  <li>Wires</li>
-</ul>
-<h5>The Board:</h5>
-<p>The first step was to make sure each individual component work. I started by wiring up my breadboard and running test code for the mic,
-  piezo buzzer, and button to make sure each component was functional and wired properly.
-</p>
-<img src="mic-thumbnail.jpg" width="600">
-<p>Afterwards, I had to figure out how to record sound frequency accurately from the microphone. Normally, the mic does not record the
-  frequency of the sounds that it picks up. In order to pick up sound frequncy, I used the "arduinoFFT" library, which uses the Fast
-  Fourier Transform (FFT) algorithm to pick up the frequency of sound waves.
-  I don't know exactly how the math works, but I was able to implement the functions from the library using tutorials, examples, and 
-  searching online.
-</p>
-
-<h5>The Code:</h5>
-<pre><code class="language-cpp">
-double detectFrequency() {
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-dot"></span>
+      <span class="brand-name">PS70</span>
+      <span class="brand-sub">Digital Fabrication</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="../index.html">Work</a>
+      <a class="nav-link" href="../about.html">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="article-wrap">
+      <a class="back-link" href="../index.html"><span class="arrow">←</span> All projects</a>
+      <div class="week-eyebrow">WEEK 06 · Sensors</div>
+      <h1 class="week-title">Inputs</h1>
+      <img class="hero-img" src="mic-thumbnail.jpg" alt="Inputs">
+      <article class="article">
+        <h2 class="a-h">Assignment 1: Capacitive Sensor</h2>
+        <p class="a-p">During class, my team was assigned to make a distance sensor. To make our capacitive sensor, we put capacitive tape on two pieces of cardboard and made a stand for each one. We then attached our sensors to a breadboard using alligator clips. I've recreated our sensors below:</p>
+        <figure class="a-fig">
+          <img src="capacitive_sensor.jpg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">After, I recorded the values read by our sensors, plotted them on a graph, and found a line of best fit. Note: the x-values are in cm and the y-values are scaled down by 1,000 for graphing. After 14 cm, the read values started to plateau around 14,000 — likely the result of our capacitive sensors being too far apart to detect anything from one another.</p>
+        <figure class="a-fig">
+          <img src="desmos_graph.png" alt="" loading="lazy">
+        </figure>
+        <h2 class="a-h">Assignment 2: Another Sensor</h2>
+        <p class="a-p">I've made quite a few musically-inclined friends recently and they all have perfect pitch. Inspired by them (and to see if they really have perfect pitch), I wanted to use a microphone for my sensor. My idea was to record the frequency of a sound input (when the user clicks a button) and transcribe that frequency into its corresponding music note. The piezo buzzer then plays that frequency back to the user.</p>
+        <h2 class="a-h">Materials</h2>
+        <ul class="a-ul">
+          <li>ESP32 XIAO</li>
+          <li>Adafruit SPW2430 MEMS Microphone</li>
+          <li>PT-2726PQ Piezo Buzzer</li>
+          <li>Button</li>
+          <li>Breadboard</li>
+          <li>Wires</li>
+        </ul>
+        <h2 class="a-h">The board</h2>
+        <p class="a-p">The first step was to make sure each individual component works. I wired up my breadboard and ran test code for the mic, piezo buzzer, and button to make sure each component was functional and wired properly.</p>
+        <figure class="a-fig">
+          <img src="mic-thumbnail.jpg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">Afterwards, I had to figure out how to record sound frequency accurately. Normally, the mic does not record the frequency of the sounds it picks up. To pick up frequency, I used the "arduinoFFT" library, which uses the Fast Fourier Transform (FFT) algorithm to detect the frequency of sound waves. I don't know exactly how the math works, but I implemented the library's functions using tutorials, examples, and searching online.</p>
+        <h2 class="a-h">The code</h2>
+        <pre class="a-code"><code>double detectFrequency() {
     // Sample audio - collects 1024 readings every 250 ms
-    for(int i = 0; i < SAMPLES; i++) {
+    for(int i = 0; i &lt; SAMPLES; i++) {
         unsigned long start = micros();
         vReal[i] = analogRead(MIC_PIN);
         vImag[i] = 0; // Used for FFT math
-        while(micros() - start < sampling_period_us);
+        while(micros() - start &lt; sampling_period_us);
     }
-    
+
     // Remove DC offset
     double mean = 0;
-    for(int i = 0; i < SAMPLES; i++) {
-        mean += vReal[i];
-    }
+    for(int i = 0; i &lt; SAMPLES; i++) mean += vReal[i];
     mean /= SAMPLES;
-    
-    for(int i = 0; i < SAMPLES; i++) {
-        vReal[i] -= mean;
-    }
-    
-    // Run FFT - idk how the math works, I just followed examples and docs.
+    for(int i = 0; i &lt; SAMPLES; i++) vReal[i] -= mean;
+
+    // Run FFT
     FFT.windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
     FFT.compute(vReal, vImag, SAMPLES, FFT_FORWARD);
     FFT.complexToMagnitude(vReal, vImag, SAMPLES);
-    
+
     // Find dominant frequency
     double maxMag = 0;
     int maxIndex = 0;
-    
-    for(int i = 2; i < SAMPLES/2; i++) {
-        if(vReal[i] > maxMag) {
-            maxMag = vReal[i];
-            maxIndex = i;
-        }
+    for(int i = 2; i &lt; SAMPLES/2; i++) {
+        if(vReal[i] &gt; maxMag) { maxMag = vReal[i]; maxIndex = i; }
     }
-    
+
     // Only return frequency if signal is strong enough
-    if(maxMag > MAGNITUDE_THRESHOLD) {
-        // Parabolic interpolation for better accuracy
+    if(maxMag &gt; MAGNITUDE_THRESHOLD) {
         double y1 = vReal[maxIndex - 1];
         double y2 = vReal[maxIndex];
         double y3 = vReal[maxIndex + 1];
-        
         double delta = 0.5 * (y3 - y1) / (2 * y2 - y1 - y3);
         double interpolatedIndex = maxIndex + delta;
-        
         return (interpolatedIndex * SAMPLING_FREQUENCY) / SAMPLES;
     }
-    
     return 0; // Signal too weak
-}
-</code></pre>
+}</code></pre>
+        <p class="a-p">Afterwards, I had to transcribe the frequency into its corresponding music note.</p>
+        <pre class="a-code"><code>String frequencyToNote(double frequency) {
+    if(frequency &lt; 20) return "---";
 
-<p>Afterwards, I had to transcribe the frequency into their corresponding music notes.</p>
+    // A4 = 440 Hz is our reference (MIDI note 69)
+    // n = 12 * log2(f / 440) + 69
+    double noteNum = 12 * log(frequency / 440.0) / log(2) + 69;
+    int nearestNote = round(noteNum);
 
-<pre><code class="language-cpp">
-  String frequencyToNote(double frequency) {
-      if(frequency < 20) {
-          return "---";
-      }
-      
-      // A4 = 440 Hz is our reference (MIDI note 69)
-      // Formula: n = 12 x log2(f / 440) + 69 double noteNum = 12 x log(frequency / 440.0) / log(2) + 69;
-      int nearestNote = round(noteNum);
-      
-      if(nearestNote < 0 || nearestNote > 127) {
-          return "Out of Range";
-      }
-      
-      // Get note name and octave
-      int octave = (nearestNote / 12) - 1;
-      int noteIndex = nearestNote % 12;
-      
-      String result = String(noteNames[noteIndex]) + String(octave);
-      
-      return result;
-  }
-</code></pre>
+    if(nearestNote &lt; 0 || nearestNote &gt; 127) return "Out of Range";
 
-<p> From there, the code pretty much just involved getting the frequency to play back, taking input from the button,
-  and printing output the Serial montior. To see the full details of the code, including helper functions and more comments, 
-  see the file below: 
-</p>
-
-<a href="frequency_sensor.ino" download="frequency_sensor.ino">Frequency Sensor Code</a>
-<p class="margin">   </p>
-
-<h5>Demo:</h5>
-<video controls width="650">
-  <source src="440_demo.mp4" type="video/mp4">
-</video>
-<img src="440_monitor.png" width="450">
-<p class="margin">   </p>
-<video controls width="650">
-  <source src="240_demo.mp4" type="video/mp4">
-</video>
-<img src="240_monitor.png" width="450">
-
-<p>The recordings are generally pretty accurate. There is some variation in the number of samples since not all meet the threshold
-  to be recorded. 
-</p>
-
-</div>
-</xmp>
+    int octave = (nearestNote / 12) - 1;
+    int noteIndex = nearestNote % 12;
+    return String(noteNames[noteIndex]) + String(octave);
+}</code></pre>
+        <p class="a-p">From there, the code mostly involved getting the frequency to play back, taking input from the button, and printing output to the Serial monitor. For the full details, including helper functions and comments, see the file below:</p>
+        <a class="a-dl" href="frequency_sensor.ino" download="frequency_sensor.ino">↓ Frequency Sensor (.ino)</a>
+        <h2 class="a-h">Demo</h2>
+        <figure class="a-fig">
+          <video src="440_demo.mp4" controls preload="metadata"></video>
+        </figure>
+        <figure class="a-fig">
+          <img src="440_monitor.png" alt="" loading="lazy">
+        </figure>
+        <figure class="a-fig">
+          <video src="240_demo.mp4" controls preload="metadata"></video>
+        </figure>
+        <figure class="a-fig">
+          <img src="240_monitor.png" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">The recordings are generally pretty accurate. There is some variation in the number of samples since not all meet the threshold to be recorded.</p>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-left">PS70 · INTRODUCTION TO DIGITAL FABRICATION</span>
+    <span class="footer-right">Shyla Nguyen · Fall 2025</span>
+  </footer>
 </body>
-
-<script src="../strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>

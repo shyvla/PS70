@@ -1,193 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Project · PS70</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="../style.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-sm navbar-" style="background-color: #dcdcdc; color: #000000;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="d-flex w-100">
-      <h4 class="nav-name me-auto"> Shyla Nguyen</h4>
-      <h2 class="nav-title position-absolute start-50 translate-middle-x">PS70 Fall 2025</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
-
+</head>
 <body>
-<xmp style="display:none;">
-<div class="textcontainer">
-<p class="margin"></p>
-
-<h3>Final Project: Moving Table </h3>
-<video controls width="850">
-  <source src="table demo.mp4" type="video/mp4">
-</video>
-
-<p> While working in manufacturing this past summer, I saw that parts, tools, and heavy equipment would often have to be transported
-  around the factory. This was often inconvenient, especially when you have your hands full. In other situations, I saw that it could
-  be helpful to have a mobile workspace or a way to easily extend you workspace when needeed. To help in these situations, I thought 
-  it would be fun to make a moving table that could move with the user.</p>
-
-<h4>How it works</h4>
-<p>The table is controlled by two ESP32 microcontrollers. There is one on the table itself and one on the glove. The two microcontrollers
-communicate through ESP-NOW. Here is a brief summary of what each of the ESP32 microcontrollers do.
-<h5>Motor ESP32</h5>
-<p>The ESP32 attached to the table controls the motors. It receives instructions from the glove ESP32 on which direction it should move.
-  The ESP32 then communicates with the motor drivers to rotate the wheels accordingly. </p>
-</p>
-<h5>Glove ESP32</h5>
-<p>The ESP32 attached to the glove processes acceleration data from the accelormeter/gyro (MPU-6050 has both) and transcribes that into
-  directions for the motors. It then sends these directions to the Motor ESP32 to move the table. </p>
-<p>For the full code with comments:</p>
-<a href="motor_code.ino" download="motor_code.ino">Motor ESP32 Code</a>
-<p class="margin"> </p>
-<a href="updated_gyro_controller.ino" download="updated_gyro_controller.ino">Glove ESP32 Code</a>
-
-
-<p class="margin"> </p>
-<h4>BOM</h4>
-<ul>
-  <li> 2 ESP32 XIAO </li>
-  <li> 2 L298N Motor Drivers </li>
-  <li> 1 MPU 6050 Accelerometer</li>
-  <li> 1 ESP32-CAM</li>
-  <li> 4 DC Motors </li>
-  <li> 4 Wheels </li>
-  <li> 2 USB Batteries </li>
-  <li> 2 Breadboards </li>
-  <li> 1 Glove </li>
-  <li> Wires</li>
-  <li> Wood </li>
-  <li> Acrylic </li>
-</ul>
-
-<p class="margin"> </p>
-
-<h4>Iteration Timeline</h4>
-<h5>Iteration 1</h5>
-<p> I built my first iteration of my moving table for MVP week. My goal for this week was to be able to control and move all 4 wheels.
-  During this iteration, I started by implementing WASD controls that allowed you to control the motors through the 2 L298N motor 
-  drivers from your laptop. I was able to get all the wheels moving individually and get general forward/backward and rightward motion 
-  with the table prototype.
-</p>
-<img src="iteration_1.jpg" style="width:500px" /> 
-<img src="iteration_1_2.jpg" style="width:500px" /> 
-<p> I was pretty happy with my MVP since I had not worked with any hardware before this class. I had two primary issues to solve though.
-  The first was that my controls kept me stuck to my laptop, which defeated the portability of the table. The second was that not all
-  my wheels would rotate when they all had to move. Usually, the back left wheel would not move while all the other wheels would be able 
-  to move.
-</p>
-<p class="margin"> </p>
-
-<h5>Iteration 2</h5>
-<p>For this iteration of the table, I added two new features to the table: </p>
-
-<ol>
-  <li>Camera</li>
-  <p> The first thing I added to the table was a live camera feed. I used the ESP32 CAM and set up the live feed 
-    via web server. The device streaming the feed must be connected to the same Wifi server as the ESP32. Now,
-    we can see where the table is moving and control it out of our line of sight.
-  </p>
-  <li>Updated Controls</li>
-  <p> Previously, the table was controlled by WASD keyboard input. While this was a good star to get things moving, 
-    this control system would force you to bring your laptop with you if you wanted to use the table. This would 
-    kinda defeat the point of the table since you wouldn't be able to keep your hands free.
-  </p>
-  <p> After networking week, I realized I could use the MPU-6050 gyro/accelerometer to control the movement of the
-    table. This way, the table could really "follow" you without needing a literal remote control. To implement the 
-    new control system, I adapted our gyro code for turret head movement to instead translate gyro tilt data into
-    movement instructions for the motors (forward, backward, left, right). This way, I only had to update the controller
-    ESP32 code.
-  </p>
-  <p> Now, when you tilt the gyro, the table will move accordingly (tilt forward, move forward, etc.)</p>
-</ol>
-
-<a href="gyro_controller.ino" download="gyro_controller.ino">Gyro Controller Code</a>
-<p class="margin"> </p>
-
-<img src="table_p2.jpg" alt="table p2" style="width:500px" /> 
-<p class="margin"> </p>
-
-<video controls width="400">
-  <source src="table_tilt_control.mp4" type="video/mp4">
-</video>
-
-<video controls width="400">
-  <source src="table_cam.mp4" type="video/mp4">
-</video>
-
-<p>I was still having an issue with one of the wheels refusing to move, even after individually replacing each piece
-  of hardware and checking the software. I'll have to take a look at it again. Also, I somehow managed to flip the 
-  directionality of left/right tilt orientation, but that should be a quick fix.
-</p>
-
-<h5>Iteration 3</h5>
-<p>For my final iteraiton of the table, I updated my gryo control logic, integrated the gyro into a glove, fixed the wheels/motor
-  control of my table, and mounted my ESP32-CAM to my table..
-</p>
-<h5>Glove Control Integration + Gyro Logic Update</h5>
-<p>I fully integrated the gyro into a glove to allow users to control the table just by pointing their hand. Doing this made me 
-  realize that the current gyro controls would make controlling the table awkward (for example, the user would have to keep the 
-  palm of their hand parallel to the floor while walking), so I also updated the gryo controls to account for this (the default
-  position now being the hand resting at the user's side). I also sewed a pocket into a glove to hold they gryo and its breadboard. 
-</p>
-<h5>Motor Debugging</h5>
-<p>After many attempts at hardware debugs and replacements, Bobby and I did some further research and realized that the reason one 
-  of my wheels refused to move was because of how the PWMing software worked, which allowed for only 6 PWM channels. The problem was,
-  I was trying to PWM 8 channels (2 per wheel), so one of my wheels simply was not being properly powered. 
-</p>
-<p>To resolve this, I ended up just allowing both of the right motors to share the same pins on my ESP32 since both of those wheels
-  would always be moving together. Additionally, I cleaned up the turning logic of the wheels. Instead of having the inner wheels rotate 
-  slower when turning, I adjusted my motor control code so that the inner wheels would rotate backwards when turning. This drastically
-  improved the smoothness of the table's turns.
-</p>
-<img src="iteration_3.jpg" style="width:500px" />
-<p class="margin"> </p>
-
-<h4>Reflections:</h4>
-<p>Coming into this class having never touched any hardware (other than my laptop) before, I found this project to be very 
-  rewarding. I ended up being able to implement pretty much my original idea for my final project and it was super cool to see 
-  how my idea came to life over the course of the class.</p>
-<p>The most challenging part of the this project was definitely working with the hardware. As I was building my prototypes, I would
-  often run into hardware problems. I found debugging hardware to be much more difficult than debugging software. When I first started,
-  I usually had no idea where to look when I had a hardware problem (and would often scrutinize code instead of wires). Sometimes, it
-  would just be a faulty piece of hardware, or it could be some inherent characteristic of the hardware I didn't know about (like the
-  PWM channels).
-</p>
-<p>Additionally, I realized there were a lot of things I don't think of while working with hardware. For example, when I was designing 
-  my motor mounts, I had to go through multiple design changes as I realized I doing a lot of silly things (like not flipping the 
-  orientation of the motor mounts or forgetting to account for the thickness of the mount itself).
-</p>
-<p>If I were to improve this project in the future, I would like to scale the size of the table up and increase its movement speed 
-  so that it could be more pratical to real life scenaries and be more convenient to use. I would also like to make greater use of the 
-  camera by implementing an auto-dock feature that allows the table to dock based on a visual cue. I think this udpate would also be 
-  a fun software challenge that would allow me to do more coding in the project.</p>
-<p>Overall, I enjoyed the learning process that came with this project. I came away from this project and class having more confidence
-  to work on hardware projects and with a better idea of the capabilities of hardware and its uses for different projects. I hope to use
-  this experience to work on new projects that combine both software and hardware in the future (and to continue being in the makerspace)!
-</p>
-
-<h4>Gallery</h4>
-<video controls width="700">
-  <source src="gallery_1.mp4" type="video/mp4">
-</video>
-<p class="margin"> </p>
-<img src="gallery_2.jpg" style="width:450px" />
-<p class="margin"> </p>
-<video controls width="700">
-  <source src="gallery_3.mp4" type="video/mp4">
-</video>
-
-</div>
-</xmp>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-dot"></span>
+      <span class="brand-name">PS70</span>
+      <span class="brand-sub">Digital Fabrication</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="../index.html">Work</a>
+      <a class="nav-link" href="../about.html">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="article-wrap">
+      <a class="back-link" href="../index.html"><span class="arrow">←</span> All projects</a>
+      <div class="week-eyebrow">WEEK 13 · Capstone</div>
+      <h1 class="week-title">Final Project</h1>
+      <img class="hero-img" src="table_p2.jpg" alt="Final Project">
+      <article class="article">
+        <figure class="a-fig">
+          <video src="table%20demo.mp4" controls preload="metadata"></video>
+        </figure>
+        <p class="a-p">While working in manufacturing this past summer, I saw that parts, tools, and heavy equipment would often have to be transported around the factory. This was often inconvenient, especially when your hands are full. In other situations, it could be helpful to have a mobile workspace or a way to easily extend your workspace when needed. To help in these situations, I thought it would be fun to make a moving table that could move with the user.</p>
+        <h2 class="a-h">How it works</h2>
+        <p class="a-p">The table is controlled by two ESP32 microcontrollers — one on the table itself and one on the glove. The two communicate through ESP-NOW. Here's a brief summary of what each does.</p>
+        <h2 class="a-h">Motor ESP32</h2>
+        <p class="a-p">The ESP32 attached to the table controls the motors. It receives instructions from the glove ESP32 on which direction to move, then communicates with the motor drivers to rotate the wheels accordingly.</p>
+        <h2 class="a-h">Glove ESP32</h2>
+        <p class="a-p">The ESP32 attached to the glove processes acceleration data from the accelerometer/gyro (the MPU-6050 has both) and transcribes it into directions for the motors. It then sends these directions to the Motor ESP32 to move the table.</p>
+        <p class="a-p">For the full code with comments:</p>
+        <a class="a-dl" href="motor_code.ino" download="motor_code.ino">↓ Motor ESP32 (.ino)</a>
+        <a class="a-dl" href="updated_gyro_controller.ino" download="updated_gyro_controller.ino">↓ Glove ESP32 (.ino)</a>
+        <h2 class="a-h">Bill of materials</h2>
+        <ul class="a-ul">
+          <li>2× ESP32 XIAO</li>
+          <li>2× L298N motor drivers</li>
+          <li>1× MPU-6050 accelerometer</li>
+          <li>1× ESP32-CAM</li>
+          <li>4× DC motors</li>
+          <li>4× wheels</li>
+          <li>2× USB batteries</li>
+          <li>2× breadboards</li>
+          <li>1× glove</li>
+          <li>Wires</li>
+          <li>Wood</li>
+          <li>Acrylic</li>
+        </ul>
+        <h2 class="a-h">Iteration 1</h2>
+        <p class="a-p">I built my first iteration for MVP week. My goal was to control and move all 4 wheels. I implemented WASD controls that let you drive the motors through the 2 L298N drivers from your laptop. I got all the wheels moving individually and achieved general forward/backward and rightward motion with the prototype.</p>
+        <figure class="a-fig">
+          <img src="iteration_1.jpg" alt="" loading="lazy">
+        </figure>
+        <figure class="a-fig">
+          <img src="iteration_1_2.jpg" alt="" loading="lazy">
+        </figure>
+        <p class="a-p">I was pretty happy with my MVP since I hadn't worked with any hardware before this class. I had two primary issues though. First, my controls kept me tethered to my laptop, defeating the table's portability. Second, not all my wheels would rotate when they all had to move — usually the back-left wheel wouldn't move while the others could.</p>
+        <h2 class="a-h">Iteration 2</h2>
+        <p class="a-p">For this iteration, I added two new features:</p>
+        <ol class="a-ol">
+          <li>Camera — I added a live camera feed using the ESP32-CAM, set up via web server. The streaming device must be on the same WiFi network as the ESP32. Now we can see where the table is moving and control it out of our line of sight.</li>
+          <li>Updated controls — Previously the table used WASD keyboard input. After networking week, I realized I could use the MPU-6050 gyro/accelerometer to control movement, so the table could really "follow" you without a literal remote. I adapted the turret-head gyro code to instead translate tilt data into motor instructions (forward, backward, left, right), so I only had to update the controller ESP32 code. Now, tilting the gyro moves the table accordingly.</li>
+        </ol>
+        <a class="a-dl" href="gyro_controller.ino" download="gyro_controller.ino">↓ Gyro Controller (.ino)</a>
+        <figure class="a-fig">
+          <img src="table_p2.jpg" alt="" loading="lazy">
+        </figure>
+        <figure class="a-fig">
+          <video src="table_tilt_control.mp4" controls preload="metadata"></video>
+        </figure>
+        <figure class="a-fig">
+          <video src="table_cam.mp4" controls preload="metadata"></video>
+        </figure>
+        <p class="a-p">I was still having an issue with one wheel refusing to move, even after individually replacing each piece of hardware and checking the software. Also, I somehow flipped the left/right tilt orientation — but that should be a quick fix.</p>
+        <h2 class="a-h">Iteration 3</h2>
+        <p class="a-p">For my final iteration, I updated my gyro control logic, integrated the gyro into a glove, fixed the wheels/motor control, and mounted my ESP32-CAM to the table.</p>
+        <h2 class="a-h">Glove integration + gyro logic</h2>
+        <p class="a-p">I fully integrated the gyro into a glove so users can control the table just by pointing their hand. This made me realize the current controls would be awkward (you'd have to keep your palm parallel to the floor while walking), so I updated the gyro controls — the default position is now the hand resting at the user's side. I also sewed a pocket into the glove to hold the gyro and its breadboard.</p>
+        <h2 class="a-h">Motor debugging</h2>
+        <p class="a-p">After many hardware debugs and replacements, Bobby and I researched further and realized the reason one wheel refused to move was how the PWM software worked — it allowed for only 6 PWM channels. I was trying to PWM 8 channels (2 per wheel), so one wheel simply wasn't being properly powered.</p>
+        <p class="a-p">To resolve this, I let both right motors share the same pins on my ESP32, since those wheels always move together. I also cleaned up the turning logic: instead of having the inner wheels rotate slower when turning, I made them rotate backwards. This drastically improved the smoothness of the table's turns.</p>
+        <figure class="a-fig">
+          <img src="iteration_3.jpg" alt="" loading="lazy">
+        </figure>
+        <h2 class="a-h">Reflections</h2>
+        <p class="a-p">Coming into this class having never touched any hardware (other than my laptop) before, I found this project very rewarding. I was able to implement pretty much my original idea, and it was super cool to see it come to life over the course of the class.</p>
+        <p class="a-p">The most challenging part was definitely the hardware. As I built prototypes, I'd often run into hardware problems, and I found debugging hardware much more difficult than debugging software. When I started, I usually had no idea where to look (and would often scrutinize code instead of wires). Sometimes it was a faulty piece of hardware, or some inherent characteristic I didn't know about (like the PWM channels).</p>
+        <p class="a-p">I also realized there are a lot of things I don't think about while working with hardware. When designing my motor mounts, I went through multiple design changes as I realized I was doing silly things (like not flipping the orientation of the mounts, or forgetting to account for the thickness of the mount itself).</p>
+        <p class="a-p">If I were to improve this project, I'd scale the table up and increase its speed so it could be more practical and convenient. I'd also make greater use of the camera by implementing an auto-dock feature that lets the table dock based on a visual cue — a fun software challenge.</p>
+        <p class="a-p">Overall, I enjoyed the learning process. I came away with more confidence to work on hardware projects and a better idea of hardware's capabilities and uses. I hope to use this experience on new projects that combine software and hardware in the future (and to keep hanging around the makerspace)!</p>
+        <h2 class="a-h">Gallery</h2>
+        <figure class="a-fig">
+          <video src="gallery_1.mp4" controls preload="metadata"></video>
+        </figure>
+        <figure class="a-fig">
+          <img src="gallery_2.jpg" alt="" loading="lazy">
+        </figure>
+        <figure class="a-fig">
+          <video src="gallery_3.mp4" controls preload="metadata"></video>
+        </figure>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-left">PS70 · INTRODUCTION TO DIGITAL FABRICATION</span>
+    <span class="footer-right">Shyla Nguyen · Fall 2025</span>
+  </footer>
 </body>
-
-<script src="../strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>

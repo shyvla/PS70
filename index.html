@@ -1,111 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-sm navbar-" style="background-color: #dcdcdc; color: #000000;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="d-flex w-100">
-      <h4 class="nav-name me-auto"> Shyla Nguyen</h4>
-      <h2 class="nav-title position-absolute start-50 translate-middle-x">PS70 Fall 2025</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="./index.html">Home</a></h4>
-      <h4><a class="nav-link" href="./about.html">About</a></h4>
-      <h4><a class="nav-link" href="./13_finalproject/index.html">Final Project</a></h4>
-    </div>
-  </div>
-</nav>
-
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shyla Nguyen · PS70 Introduction to Digital Fabrication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-dot"></span>
+      <span class="brand-name">PS70</span>
+      <span class="brand-sub">Introduction to Digital Fabrication</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="index.html">Work</a>
+      <a class="nav-link" href="about.html">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="hero">
+      <div class="eyebrow">PS70 · FALL 2025</div>
+      <h1 class="hero-title">Introduction to Digital Fabrication</h1>
+      <p class="hero-sub">Documentation of weekly projects — 2D &amp; 3D design, embedded electronics, CNC machining, networking, and a final build.</p>
+    </section>
 
-<xmp style="display:none;">
-
-<div class="container-fluid bg-3 text-center">
-  
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="./01_intro/index.html"> <!-- Makes image clickable -->
-        <image style = "width: 75%"src = "./01_intro/table-sketches-thumbnail.jpg" alt = "week 1 image"> </image>
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Weekly Projects</h2>
+        <span class="section-count">11 modules</span>
+      </div>
+      <div class="grid">
+      <a class="card" href="01_intro/index.html">
+        <div class="card-thumb">
+          <img src="01_intro/table-sketches-thumbnail.jpg" alt="Introduction" loading="lazy">
+          <span class="card-badge">WEEK 01</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Getting Started</div>
+          <div class="card-title">Introduction</div>
+        </div>
       </a>
-      <br>[Week 1: Intro](./01_intro/index.html)
-    </div>
-    <div class="col-sm-4">
-      <a href="./02_2Ddesign/index.html">
-        <image style = "width: 75%"src = "./02_2Ddesign/bearboxstack-thumbnail.jpg" alt = "week 2 image"> </image>
+      <a class="card" href="02_2Ddesign/index.html">
+        <div class="card-thumb">
+          <img src="02_2Ddesign/bearboxstack-thumbnail.jpg" alt="2D Design" loading="lazy">
+          <span class="card-badge">WEEK 02</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Vinyl &amp; Laser</div>
+          <div class="card-title">2D Design</div>
+        </div>
       </a>
-      <br>[Week 2: 2D Design](./02_2Ddesign/index.html)
-    </div>
-    <div class="col-sm-4">
-      <a href="./03_fabrication/index.html"> 
-        <image style = "width: 75%"src = "./03_fabrication/ferris-wheel-thumbnail.jpg" alt = "week 3 image"> </image>
+      <a class="card" href="03_fabrication/index.html">
+        <div class="card-thumb">
+          <img src="03_fabrication/ferris-wheel-thumbnail.jpg" alt="Fabrication" loading="lazy">
+          <span class="card-badge">WEEK 03</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Laser Cutting</div>
+          <div class="card-title">Fabrication</div>
+        </div>
       </a>
-      <br>[Week 3: Fabrication](./03_fabrication/index.html)
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="./04_microcontroller/index.html">
-        <image style = "width: 75%"src = "./04_microcontroller/week-4-thumbnail.jpg" alt = "week 4 image"> </image> 
+      <a class="card" href="04_microcontroller/index.html">
+        <div class="card-thumb">
+          <img src="04_microcontroller/week-4-thumbnail.jpg" alt="Programming" loading="lazy">
+          <span class="card-badge">WEEK 04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Microcontroller</div>
+          <div class="card-title">Programming</div>
+        </div>
       </a>
-      <br>[Week 4: Programming](./04_microcontroller/index.html)
-    </div>
-    <div class="col-sm-4">
-      <a href="./05_3Ddesign/">
-        <image style = "width: 75%"src = "./05_3Ddesign/cat-scan-thumbnail.jpg" alt = "week 5 image"> </image>
+      <a class="card" href="05_3Ddesign/index.html">
+        <div class="card-thumb">
+          <img src="05_3Ddesign/cat-scan-thumbnail.jpg" alt="3D Design" loading="lazy">
+          <span class="card-badge">WEEK 05</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Modeling &amp; Printing</div>
+          <div class="card-title">3D Design</div>
+        </div>
       </a>
-      <br>[Week 5: 3D Design](./05_3Ddesign/index.html)
-    </div>
-    <div class="col-sm-4">
-      <a href="./06_inputs/">
-        <image style = "width: 75%"src = "./06_inputs/mic-thumbnail.jpg" alt = "week 6 image"> </image>
+      <a class="card" href="06_inputs/index.html">
+        <div class="card-thumb">
+          <img src="06_inputs/mic-thumbnail.jpg" alt="Inputs" loading="lazy">
+          <span class="card-badge">WEEK 06</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Sensors</div>
+          <div class="card-title">Inputs</div>
+        </div>
       </a>
-      <br>[Week 6: Inputs](./06_inputs/index.html)
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="./07_outputs/"> 
-        <image style = "width: 75%"src = "./07_outputs/car-thumbnail.jpg" alt = "week 7 image"> </image>
+      <a class="card" href="07_outputs/index.html">
+        <div class="card-thumb">
+          <img src="07_outputs/car-thumbnail.jpg" alt="Outputs" loading="lazy">
+          <span class="card-badge">WEEK 07</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Making Things Move</div>
+          <div class="card-title">Outputs</div>
+        </div>
       </a>
-      <br>[Week 7: Outputs](./07_outputs/index.html)
-    </div>
-    <div class="col-sm-4">
-      <a href="./08_cnc/">
-        <image style = "width: 75%"src = "./08_cnc/pond-thumbnail.jpg" alt = "week 8 image"> </image>
+      <a class="card" href="08_cnc/index.html">
+        <div class="card-thumb">
+          <img src="08_cnc/pond-thumbnail.jpg" alt="CNC" loading="lazy">
+          <span class="card-badge">WEEK 08</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Large-Format Cutting</div>
+          <div class="card-title">CNC</div>
+        </div>
       </a>
-      <br>[Week 8: CNC](./08_cnc/index.html)
-    </div>
-    <div class="col-sm-4">
-      <a href="./09_networking/">
-        <image style = "width: 75%"src = "./09_networking/turret-control-thumbnail.jpg" alt = "week 9 image"> </image>
+      <a class="card" href="09_networking/index.html">
+        <div class="card-thumb">
+          <img src="09_networking/turret-control-thumbnail.jpg" alt="Networking" loading="lazy">
+          <span class="card-badge">WEEK 09</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Communication</div>
+          <div class="card-title">Networking</div>
+        </div>
       </a>
-      <br>[Week 9: Networking](./09_networking/index.html)
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="https://mmattyv.github.io/ps70-website/week10/">
-        <image style = "width: 75%"src = "./10_machine/siracha.jpg" alt = "machine building image"> </image>
+      <a class="card" href="https://mmattyv.github.io/ps70-website/week10/" target="_blank" rel="noopener">
+        <div class="card-thumb">
+          <img src="10_machine/siracha.jpg" alt="Machine Building" loading="lazy">
+          <span class="card-badge">WEEK 10</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Team Build<span class="ext">↗ external</span></div>
+          <div class="card-title">Machine Building</div>
+        </div>
       </a>
-      <br>[Machine Building](https://mmattyv.github.io/ps70-website/week10/)
-    </div>
-    <div class="col-sm-4">
-      <a href="./13_finalproject/">
-        <image style = "width: 75%"src = "./13_finalproject/table_p2.jpg" alt = "final project image"> </image> 
+      <a class="card" href="13_finalproject/index.html">
+        <div class="card-thumb">
+          <img src="13_finalproject/table_p2.jpg" alt="Final Project" loading="lazy">
+          <span class="card-badge">WEEK 13</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Capstone</div>
+          <div class="card-title">Final Project</div>
+        </div>
       </a>
-      <br>[Final Project](./13_finalproject/index.html)
-    </div>
-  </div>
-</div>
-
-
-</xmp>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-left">PS70 · INTRODUCTION TO DIGITAL FABRICATION</span>
+    <span class="footer-right">Shyla Nguyen · Fall 2025</span>
+  </footer>
 </body>
-
-<script src="./strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>
